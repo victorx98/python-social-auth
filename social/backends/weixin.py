@@ -22,9 +22,13 @@ class WeixinOAuth2(BaseOAuth2):
         ('nickname', 'username'),
         ('headimgurl', 'profile_image_url'),
         ('city', 'city'),
-        ('state', 'province'),
+        ('province', 'province'),
         ('country', 'country'),
         ('sex', 'gender'),
+        ('unionid', 'unionid'),
+        ('openid', 'openid'),
+        ('language', 'language'),
+        ('privilege', 'privilege'),
         ('refresh_token', 'refresh_token'),
     ]
 
