@@ -120,7 +120,7 @@ class WeixinOAuth2APP(WeixinOAuth2):
 
     Can't use in web, only in weixin app
     """
-    name = 'weixinapp'
+    name = 'weixin'
     ID_KEY = 'openid'
     AUTHORIZATION_URL = 'https://open.weixin.qq.com/connect/oauth2/authorize'
     ACCESS_TOKEN_URL = 'https://api.weixin.qq.com/sns/oauth2/access_token'
