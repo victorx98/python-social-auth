@@ -25,6 +25,7 @@ class WeixinOAuth2(BaseOAuth2):
         ('state', 'province'),
         ('country', 'country'),
         ('sex', 'gender'),
+        ('refresh_token', 'refresh_token'),
     ]
 
     def get_user_details(self, response):
@@ -37,7 +38,7 @@ class WeixinOAuth2(BaseOAuth2):
             username = response.get('nickname', '')
         return {
             'username': username,
-            'profile_image_url': response.get('headimgurl', '')
+            'profile_image_url': response.get('headimgurl', ''),
             'unionid': response.get('unionid', '')
         }
 
