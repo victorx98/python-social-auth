@@ -21,6 +21,10 @@ class WeixinOAuth2(BaseOAuth2):
     EXTRA_DATA = [
         ('nickname', 'username'),
         ('headimgurl', 'profile_image_url'),
+        ('city', 'city'),
+        ('state', 'province'),
+        ('country', 'country'),
+        ('sex', 'gender'),
     ]
 
     def get_user_details(self, response):
@@ -34,6 +38,7 @@ class WeixinOAuth2(BaseOAuth2):
         return {
             'username': username,
             'profile_image_url': response.get('headimgurl', '')
+            'unionid': response.get('unionid', '')
         }
 
     def user_data(self, access_token, *args, **kwargs):
