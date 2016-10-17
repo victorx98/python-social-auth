@@ -36,8 +36,9 @@ def social_user(backend, uid, user=None, *args, **kwargs):
 def associate_user(backend, uid, user=None, social=None, *args, **kwargs):
     if user and not social:
         try:
+            provider = 'weixin' if backend.name == 'weixinapp' else backend.name
             social = backend.strategy.storage.user.create_social_auth(
-                user, uid, backend.name
+                user, uid, provider
             )
         except Exception as err:
             if not backend.strategy.storage.is_integrity_error(err):
