@@ -17,9 +17,6 @@ def auth_allowed(backend, details, response, *args, **kwargs):
 
 def social_user(backend, uid, user=None, *args, **kwargs):
     provider = backend.name
-    # weixin and weixinapp are same provider. To avoid create duplicated user
-    if provider == 'weixinapp':
-        provider = 'weixin'
     social = backend.strategy.storage.user.get_social_auth(provider, uid)
     if social:
         if user and social.user != user:
